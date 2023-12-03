@@ -1,11 +1,13 @@
 class ToDo {
   String? id;
   String? todoText;
+  DateTime? deadline;
   bool isDone;
 
   ToDo({
     required this.id,
     required this.todoText,
+    this.deadline,
     this.isDone = false,
   });
 
