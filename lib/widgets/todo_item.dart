@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart'; 
 import '../model/todo.dart';
 import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
-  final onToDoChanged;
-  final onDeleteItem;
+  final Function(ToDo) onToDoChanged;
+  final Function(String) onDeleteItem;
 
   const ToDoItem({
     Key? key,
@@ -21,7 +21,7 @@ class ToDoItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          // print('Clicked on Todo Item.');
+
           onToDoChanged(todo);
         },
         shape: RoundedRectangleBorder(
@@ -32,15 +32,27 @@ class ToDoItem extends StatelessWidget {
         leading: Icon(
           todo.isDone ? Icons.check_box : Icons.check_box_outline_blank,
           color: tdBlue,
-        ),
-        title: Text(
+ title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+             Text(
           todo.todoText!,
           style: TextStyle(
             fontSize: 16,
             color: tdBlack,
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
-        ),
+                   ),
+            if (todo.deadline != null)
+              Text(
+                'Deadline: ${DateFormat('yyyy-MM-dd').format(todo.deadline!)}',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: tdGrey,
+                ),
+              ),
+          ],
+   ),
         trailing: Container(
           padding: EdgeInsets.all(0),
           margin: EdgeInsets.symmetric(vertical: 12),
@@ -55,8 +67,7 @@ class ToDoItem extends StatelessWidget {
             iconSize: 18,
             icon: Icon(Icons.delete),
             onPressed: () {
-              // print('Clicked on delete icon');
-              onDeleteItem(todo.id);
+               onDeleteItem(todo.id!);
             },
           ),
         ),
