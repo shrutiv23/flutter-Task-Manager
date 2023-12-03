@@ -7,5 +7,6 @@ The cross-platform task manager app features intuitive task addition and deletio
 Download PPT Link below:- 
 [TaskManager.pptx](https://github.com/shrutiv23/CPAD/files/13533922/TaskManager.pptx)
 
-![Simulator Screenshot - iPhone 15 Pro Max - 2023-12-02 at 12 27 51](https://github.com/shrutiv23/flutter-Task-Manager/assets/48903464/24b9095c-1247-462d-bb4b-60483f882d23)
+![Simulator Screenshot - iPhone 15 Pro Max - 2023-12-02 at 12 27 51]
 
+![Simulator Screenshot - iPhone 15 Pro Max - 2023-12-03 at 23 02 57](https://github.com/shrutiv23/flutter-Task-Manager/assets/127499134/6caf4349-ecc8-4078-854f-d84882092ef2)
